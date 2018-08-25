@@ -1,0 +1,49 @@
+html {
+  background-color: #000;
+  color: #fff;
+}
+.center {
+  text-align: center;
+}
+.image-wrapper {
+  position: relative;
+}
+.image-size {
+  width: 600px;
+  height: 400px;
+}
+.next {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+}
+.prev {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+.slider {
+  width: 800px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+.slides {
+  width: 6000px;
+  margin: 0;
+  padding: 0;
+}
+.slide {
+  float: left;
+  list-style-type: none;
+  width: 200px;
+  height: 120px;
+}
+.texts {
+  position: relative;
+  display: inline-block;
+
+}
+.invisible {
+  display: none;
+}
