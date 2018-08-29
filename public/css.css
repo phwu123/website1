@@ -1,6 +1,11 @@
 html {
-  background-color: #000;
+  background: #111 url('./images/aurora3.jpg');
   color: #fff;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora3.jpg', sizingMethod='scale');
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora3.jpg', sizingMethod='scale')";
+}
+a {
+  color: #78d9f2;
 }
 .center {
   text-align: center;
@@ -12,38 +17,66 @@ html {
   width: 600px;
   height: 400px;
 }
-.next {
+.fa-arrow-right {
   position: absolute;
   top: 50%;
-  right: 5%;
+  right: 10%;
 }
-.prev {
+.fa-arrow-left {
   position: absolute;
   top: 50%;
-  left: 5%;
+  left: 10%;
 }
 .slider {
-  width: 800px;
-  overflow: hidden;
-  position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 .slides {
-  width: 6000px;
+  position: relative; 
   margin: 0;
   padding: 0;
 }
 .slide {
+  position: relative;
   float: left;
   list-style-type: none;
-  width: 200px;
-  height: 120px;
+  border: 4px solid transparent;
 }
-.texts {
-  position: relative;
-  display: inline-block;
 
+.slide img {
+  width: 194px;
+  height: 132px;
+  display: block;
 }
 .invisible {
   display: none;
+}
+.default-selected {
+  border-color: red;
+}
+h1 {
+  margin: 10px 0;
+}
+h3 {
+  margin: 5px 0;
+}
+h4 {
+  margin: 5px 0;
+}
+.app-text {
+  animation: text-appear 1s;
+}
+.app-desc {
+  text-indent: 15px;
+  text-align: initial;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.tech-stack {
+  margin-top: 10px;
+}
+
+@keyframes text-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
