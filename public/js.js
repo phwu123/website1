@@ -5,6 +5,7 @@ $(document).ready(function () {
   $('.image-wrapper').attr('src', tn_array[0]);
   $('.fa-arrow-left').css('visibility', 'hidden');
   $('#2, #3').css('display', 'none');
+  var websites = ["welp", "photo", "anime"];
 
   var imagesLen = tn_array.length;
   var imageCur = 0;
@@ -32,6 +33,7 @@ $(document).ready(function () {
 
   function selectChange(e) {
     $('#' + (imageCur + 1)).show();
+    $('.weblink').attr('href', 'https://www.' + websites[imageCur] + '.peterhwu.com');
     if (e === 'r') {
       $('.slider .slides').animate({ 'margin-left': '-=' + imageWidth }, 500);
       $('.image-size').attr('src', tn_array[imageCur]);
@@ -43,7 +45,6 @@ $(document).ready(function () {
       }
     }
     if (e === 'l') {
-      $('#' + (imageCur + 1)).show();
       $('.slider .slides').animate({ 'margin-right': '+=' + imageWidth }, 500);
       $('.image-size').attr('src', tn_array[imageCur]);
       if (imageCur === 0) {
@@ -95,6 +96,7 @@ $(document).ready(function () {
       $('.image-size').attr('src', imgSrc);
     }
     $('#' + (imageCur + 1)).show();
+    $('.weblink').attr('href', 'https://www.' + websites[imageCur] + '.peterhwu.com');
     if (imgInd > 0) {
       if ($('.fa-arrow-left').css('visibility') === 'hidden') {
         $('.fa-arrow-left').css('visibility', 'visible');

@@ -1,8 +1,8 @@
 html {
-  background: #111 url('./images/aurora3.jpg');
+  background: #111 url('./images/aurora.jpg');
   color: #fff;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora3.jpg', sizingMethod='scale');
--ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora3.jpg', sizingMethod='scale')";
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora.jpg', sizingMethod='scale');
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora.jpg', sizingMethod='scale')";
 }
 a {
   color: #78d9f2;
@@ -55,13 +55,13 @@ a {
   border-color: red;
 }
 h1 {
-  margin: 10px 0;
+  margin: 8px 0;
 }
 h3 {
-  margin: 5px 0;
+  margin: 3px 0;
 }
 h4 {
-  margin: 5px 0;
+  margin: 3px 0;
 }
 .app-text {
   animation: text-appear 1s;

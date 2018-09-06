@@ -9,6 +9,10 @@ app.use(parser.json());
 
 app.use(express.static(path.join(__dirname, './public')));
 
+app.get('/welp', (req, res) => {
+  res.sendFile('D:/Hack Reactor Stuff/website/public/index.html')
+})
+
 const port = 3000;
 
 app.listen(port, () => {
