@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="css.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <title>My Site</title>
+</head>
+
+<body>
+  <div class="center">
+    <!-- <span>This is my site</span> -->
+    <div>
+      <h1>Application Samples</h1>
+      <div class="apps-gallery">
+
+        <!-- main image -->
+        <div class="image-wrapper">
+          <a class="weblink" href="https://www.welp.peterhwu.com" target="_blank">
+            <img class="image-size" src="./images/welp-sidebar.PNG">
+          </a>
+          <div class="main-buttons">
+            <!-- nav buttons -->
+            <i class="fas fa-arrow-right fa-3x"></i>
+            <i class="fas fa-arrow-left fa-3x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- slider bar -->
+    <div class="slider">
+      <ul class="slides">
+        <li class="slide default-selected">
+          <img src="./images/welp-sidebar.PNG" alt="Image 1">
+        </li>
+        <li class="slide">
+          <img src="./images/amaz-photo.PNG" alt="Image 2">
+        </li>
+        <li class="slide">
+          <img src="./images/mvp.PNG" alt="Image 3">
+        </li>
+      </ul>
+    </div>
+
+    <div class="texts">
+
+      <div class="app-text" id="1">
+        <a href="https://www.welp.peterhwu.com" target="_blank">
+          <h3 class="app-name">Welp</h3>
+        </a>
+        <h4>github: <a href="https://github.com/phwu123/welp-voldemort-sidebar">service</a> <a href="https://github.com/phwu123/welp-voldemort-proxy">proxy</a></h4>
+        <div class="app-desc">
+          This is a functional application displaying restaurant information heavily based off of Yelp's restaurant
+          page. Includes gateway proxy server to service. Refresh the page to see the information of a random
+          restaurant
+        </div>
+        <div class="tech-stack">
+          Javascript, React, CSS Modules, Node.js/Express, PostgreSQL
+        </div>
+      </div>
+
+      <div class="app-text invisible" id="2">
+        <a href="https://www.photo.peterhwu.com" target="_blank">
+          <h3 class="app-name">Cat Gallery</h3>
+        </a>
+        <h4>github: <a href="https://github.com/phwu123/amaz-photo-mod">service</a> <a href="https://github.com/phwu123/amaz-photo-proxy">proxy</a></h4>
+        <div class="app-desc">
+          This is a photo gallery, with functionality based off of Amazon's photo galleries for each product. Refresh
+          the page to see a random set of images. Setup includes gateway proxy server to nginx for horizontal load
+          balancing of two identical photo gallery services. Implements server side rendering. Data are url that link
+          to unsplash, placekitten, and loremflickr (images may have slow load times)
+        </div>
+        <div class="tech-stack">
+          Javascript, React, Node.js/Express, MongoDB, Nginx
+        </div>
+      </div>
+
+      <div class="app-text invisible" id="3">
+        <a href="https://www.anime.peterhwu.com" target="_blank">
+          <h3 class="app-name">Anime Gallery List</h3>
+        </a>
+        <h4>github: <a href="https://github.com/phwu123/hrla22-mvp">service</a></h4>
+        <div class="app-desc">
+          This application searches with Kitsu API and displays images based on search queries.
+        </div>
+        <div class="tech-stack">
+          Javascript, React, Node.js/Express, MongoDB, Mongoose
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+  </div>
+  <script src="js.js"></script>
+</body>
+
+</html>

@@ -1,20 +1,28 @@
 $(document).ready(function () {
-  var tn_array = $('.slides img').map(function () {
+  var tn_array = $('.img-scroll img').map(function () {
     return $(this).attr('src');
   }).get();
-  $('.image-wrapper').attr('src', tn_array[0]);
   $('.fa-arrow-left').css('visibility', 'hidden');
   $('#2, #3').css('display', 'none');
   var websites = ["welp", "photo", "anime"];
-
   var imagesLen = tn_array.length;
   var imageCur = 0;
   var imageWidth = 0;
   var bottomLen = 3;
   var indexDif;
 
+  function toggleVisibility(item, startState) {
+    let changeTo = 'visible';
+    if (startState === 'visible') {
+      changeTo = 'hidden';
+    }
+    if ($(item).css('visibility') === startState) {
+      ($(item).css('visibility', changeTo));
+    }
+  }
+
   function selectNext(e) {
-    $('ul li:nth-child(' + (imageCur + 1) + ')').css('border-color', 'transparent');
+    $('.scroll-bar div:nth-child(' + (imageCur + 2) + ') img').css('border-color', 'transparent');
     $('#' + (imageCur + 1)).hide();
     if (e === 'r') {
       if (imageCur < tn_array.length) {
@@ -28,45 +36,42 @@ $(document).ready(function () {
         selectChange(e);
       }
     }
-    $('ul li:nth-child(' + (imageCur + 1) + ')').css('border-color', 'red');
+    $('.scroll-bar div:nth-child(' + (imageCur + 2) + ') img').css('border-color', 'red');
   }
 
   function selectChange(e) {
     $('#' + (imageCur + 1)).show();
     $('.weblink').attr('href', 'https://www.' + websites[imageCur] + '.peterhwu.com');
     if (e === 'r') {
-      $('.slider .slides').animate({ 'margin-left': '-=' + imageWidth }, 500);
-      $('.image-size').attr('src', tn_array[imageCur]);
+      // $('.slider .img-scroll').animate({ 'margin-left': '-=' + imageWidth }, 500);
+      $('.img-main').attr('src', tn_array[imageCur]);
       if (imageCur === imagesLen - 1) {
-        $('.fa-arrow-right').css('visibility', 'hidden');
+        toggleVisibility('.fa-arrow-right', 'visible');
       }
-      if ($('.fa-arrow-left').css('visibility') === 'hidden') {
-        $('.fa-arrow-left').css('visibility', 'visible');
-      }
+      toggleVisibility('.fa-arrow-left', 'hidden');
     }
     if (e === 'l') {
-      $('.slider .slides').animate({ 'margin-right': '+=' + imageWidth }, 500);
-      $('.image-size').attr('src', tn_array[imageCur]);
+      // $('.slider .img-scroll').animate({ 'margin-right': '+=' + imageWidth }, 500);
+      $('.img-main').attr('src', tn_array[imageCur]);
       if (imageCur === 0) {
-        $('.fa-arrow-left').css('visibility', 'hidden');
+        toggleVisibility('.fa-arrow-left', 'visible');
       }
-      if ($('.fa-arrow-right').css('visibility') === 'hidden') {
-        $('.fa-arrow-right').css('visibility', 'visible');
-      }
+      toggleVisibility('.fa-arrow-right', 'hidden');
     }
   }
 
+  //right button functionality
   $('.fa-arrow-right').click(function () {
     selectNext('r');
   })
-
+  //left button functionality
   $('.fa-arrow-left').click(function () {
     selectNext('l');
   })
-
-  $(document).keydown(function(e) {
+  //keypress functionality
+  $(document).keydown(function (e) {
     e.preventDefault();
-    switch(e.which) {
+    switch (e.which) {
       case 37:
         if (imageCur > 0) {
           selectNext('l');
@@ -80,41 +85,45 @@ $(document).ready(function () {
       default: return;
     }
   })
-
-  $('.slides li img').click(function () {
+  //image click functionality
+  $('.scroll-bar img').click(function () {
     $('#' + (imageCur + 1)).hide();
     var imgSrc = $(this).attr('src');
-    var imgInd = $(this).parent('.slide').index();
+    var imgInd = $(this).parent('.img-scroll').index() - 1;
     if (imgInd < imagesLen - bottomLen) {
-      indexDif = imageCur;
-      imageCur = imgInd;
-      indexDif = Math.abs(indexDif - imageCur);
-      $('.slider .slides').animate({ 'margin-left': '-=' + imageWidth * indexDif }, 500);
-      $('image-size').attr('src', imgSrc);
+      // indexDif = imageCur;
+      // imageCur = imgInd;
+      // indexDif = Math.abs(indexDif - imageCur);
+      //  $('.slider .slides').animate({ 'margin-left': '-=' + imageWidth * indexDif }, 500);
+      // $('.img-main').attr('src', imgSrc);
     } else {
       imageCur = imgInd;
-      $('.image-size').attr('src', imgSrc);
+      $('.img-main').attr('src', imgSrc);
     }
     $('#' + (imageCur + 1)).show();
     $('.weblink').attr('href', 'https://www.' + websites[imageCur] + '.peterhwu.com');
     if (imgInd > 0) {
-      if ($('.fa-arrow-left').css('visibility') === 'hidden') {
-        $('.fa-arrow-left').css('visibility', 'visible');
-      }
+      toggleVisibility('.fa-arrow-left', 'hidden');
     }
     if (imgInd === 0) {
-      if ($('.fa-arrow-left').css('visibility') === 'visible')
-        $('.fa-arrow-left').css('visibility', 'hidden');
+      toggleVisibility('.fa-arrow-left', 'visible');
     }
     if (imgInd < imagesLen - 1) {
-      if ($('.fa-arrow-right').css('visibility') === 'hidden')
-        $('.fa-arrow-right').css('visibility', 'visible');
+      toggleVisibility('.fa-arrow-right', 'hidden');
     }
     if (imgInd === imagesLen - 1) {
-      if ($('.fa-arrow-right').css('visibility') === 'visible')
-        $('.fa-arrow-right').css('visibility', 'hidden');
+      toggleVisibility('.fa-arrow-right', 'visible');
     }
-    $('.slides').children().css('border-color', 'transparent');
-    $(this).parent().css('border-color', 'red');
+    $('.scroll-bar').children().children().css('border-color', 'transparent');
+    $(this).css('border-color', 'red');
   })
+  //bouncing arrow scrolling detection
+  $(document).scroll(function () {
+    if ($(this).scrollTop() < 0.5 * $('body').height()) {
+      toggleVisibility('.fa-chevron-down', 'hidden');
+    } else {
+      toggleVisibility('.fa-chevron-down', 'visible');
+    }
+  })
+
 })

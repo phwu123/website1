@@ -1,15 +1,22 @@
-body {
+html {
   background: #111 url('./images/aurora.jpg');
-  background-attachment: fixed;
   color: #fff;
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora.jpg', sizingMethod='scale');
 -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora.jpg', sizingMethod='scale')";
 }
-
 a {
   color: #78d9f2;
 }
-
+.center {
+  text-align: center;
+}
+.image-wrapper {
+  position: relative;
+}
+.image-size {
+  width: 600px;
+  height: 400px;
+}
 .fa-arrow-right {
   position: absolute;
   top: 50%;
@@ -41,7 +48,9 @@ a {
   height: 132px;
   display: block;
 }
-
+.invisible {
+  display: none;
+}
 .default-selected {
   border-color: red;
 }
@@ -57,79 +66,17 @@ h4 {
 .app-text {
   animation: text-appear 1s;
 }
+.app-desc {
+  text-indent: 15px;
+  text-align: initial;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.tech-stack {
+  margin-top: 10px;
+}
 
 @keyframes text-appear {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-img {
-  border-radius: 1px;
-}
-
-.img-responsive {
-  display: block;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-}
-
-.scroller {
-  margin-top: 3px;
-}
-
-.scroll-pad-left {
-  padding: 0 0 0 2px;
-}
-
-.scroll-pad-mid {
-  padding: 0 1px 0 1px;
-}
-
-.scroll-pad-right {
-  padding: 0 2px 0 0;
-}
-
-.no-pad {
-  padding: 0
-}
-
-.selection {
-  border: 4px solid transparent;
-}
-
-.default-selected {
-  border-color: red;
-}
-
-.opener {
-  display: flex;
-  justify-content: center;
-  top: 40vh;
-}
-
-
-.fa-chevron-down {
-  z-index: 10;
-  position: fixed;
-  bottom: 2vh;
-  left: 0;
-  right: 0;
-  text-align: center;
-  animation: bouncing 0.8s infinite;
-}
-
-@keyframes bouncing {
-  25% {
-    transform: translateY(2vh);
-  }
-  50% {
-    transform: translateY(-2vh);
-  }
-  75% {
-    transform: translateY(0);
-  }
-  87% {
-    transform: translateY(1vh);
-  }
 }

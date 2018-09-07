@@ -5,101 +5,150 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
   <link href="css.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
-  <title>My Site</title>
+  <title>Peter Hwu - Software Engineer</title>
 </head>
 
 <body>
-  <div class="center">
-    <!-- <span>This is my site</span> -->
-    <div>
-      <h1>Application Samples</h1>
-      <div class="apps-gallery">
+  <div class="container-fluid">
 
-        <!-- main image -->
-        <div class="image-wrapper">
-          <a class="weblink" href="https://www.welp.peterhwu.com" target="_blank">
-            <img class="image-size" src="./images/welp-sidebar.PNG">
-          </a>
-          <div class="main-buttons">
-            <!-- nav buttons -->
-            <i class="fas fa-arrow-right fa-3x"></i>
-            <i class="fas fa-arrow-left fa-3x"></i>
+    <div class="row">
+
+      <div class="col-sm-12 opener" style="min-height: 150vh">
+        <div class="text-center">
+          <h1>Peter Hwu</h1>
+          <h5>Software Engineer</h5>
+        </div>
+      </div>
+    </div>
+    <i class="fas fa-2x fa-chevron-down"></i>
+
+    <div class="row">
+      <div class="col-sm-3 text-center">
+        <div class="texts">
+          <br><br>
+          <div class="app-text" id="1">
+            <a href="https://www.welp.peterhwu.com" target="_blank">
+              <h3 class="app-name">Welp</h3>
+            </a>
+            <h4>github: <a href="https://github.com/phwu123/welp-voldemort-sidebar">service</a> <a href="https://github.com/phwu123/welp-voldemort-proxy">proxy</a></h4>
+            <br>
+            <h6 class="text-left">Tech Stack:</h6>
+            <ul class="list-group text-left">
+              <li class="list-group-item list-group-item-primary">Frontend: Javascript, ReactJS, HTML, CSS Modules</li>
+              <li class="list-group-item list-group-item-secondary">Backend: Node.js/Express</li>
+              <li class="list-group-item list-group-item-success">Database: PostgreSQL/Sequelize</li>
+              <li class="list-group-item list-group-item-danger">Deployment: Docker, DigitalOcean/AWS</li>
+              <li class="list-group-item list-group-item-info">Description: This is a functional application displaying
+                restaurant information heavily based off of Yelp's restaurant page. Includes gateway proxy server to
+                service. Refresh the page to see the information of a random restaurant</li>
+            </ul>
+          </div>
+
+          <div class="app-text" id="2">
+            <a href="https://www.photo.peterhwu.com" target="_blank">
+              <h3 class="app-name">Cat Gallery</h3>
+            </a>
+            <h4>github: <a href="https://github.com/phwu123/amaz-photo-mod">service</a> <a href="https://github.com/phwu123/amaz-photo-proxy">proxy</a></h4>
+            <br>
+            <h6 class="text-left">Tech Stack:</h6>
+            <ul class="list-group text-left">
+              <li class="list-group-item list-group-item-primary">Frontend: Javascript, ReactJS, HTML,
+                Styled-Components</li>
+              <li class="list-group-item list-group-item-secondary">Backend: Node.js/Express</li>
+              <li class="list-group-item list-group-item-success">Database: MongoDB (MariaDB, CouchDB)</li>
+              <li class="list-group-item list-group-item-danger">Deployment: Nginx, Docker, DigitalOcean/AWS</li>
+              <li class="list-group-item list-group-item-info"> This is a photo gallery, with functionality based off
+                of Amazon's photo galleries for each product. Refresh the page to see a random set of images. Setup
+                includes gateway proxy server to nginx for horizontal load balancing of two identical photo gallery
+                services. Implements server side rendering. Data are url that link to unsplash, placekitten, and
+                loremflickr (images may have slow load times)</li>
+            </ul>
+          </div>
+
+          <div class="app-text" id="3">
+            <a href="https://www.anime.peterhwu.com" target="_blank">
+              <h3 class="app-name">Anime Gallery List</h3>
+            </a>
+            <h4>github: <a href="https://github.com/phwu123/hrla22-mvp">service</a></h4>
+            <br>
+            <h6 class="text-left">Tech Stack:</h6>
+            <ul class="list-group text-left">
+              <li class="list-group-item list-group-item-primary">Frontend: Javascript, ReactJS</li>
+              <li class="list-group-item list-group-item-secondary">Backend: Node.js/Express</li>
+              <li class="list-group-item list-group-item-success">Database: MongoDB/Mongoose</li>
+              <li class="list-group-item list-group-item-danger">Deployment: Docker, DigitalOcean/AWS</li>
+              <li class="list-group-item list-group-item-info">This application searches with Kitsu API and displays
+                images based on search queries.</li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="col-sm-9 text-center">
+
+        <div class="short-div">
+          <h1>Application Samples</h1>
+        </div>
+
+        <div class="short-div">
+          <div class="row">
+            <div class="col-sm-1 no-pad">
+              <i class="fas fa-arrow-left fa-3x"></i>
+            </div>
+            <div class="col-sm-10 default-selected no-pad">
+              <div class="short-div">
+                <a class="weblink" href="https://www.welp.peterhwu.com" target="_blank">
+                  <img class="img-responsive img-main" src="./images/welp-sidebar.PNG">
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-1 no-pad">
+              <i class="fas fa-arrow-right fa-3x"></i>
+            </div>
+
           </div>
         </div>
-      </div>
-    </div>
+        <div class="short-div">
 
-    <!-- slider bar -->
-    <div class="slider">
-      <ul class="slides">
-        <li class="slide default-selected">
-          <img src="./images/welp-sidebar.PNG" alt="Image 1">
-        </li>
-        <li class="slide">
-          <img src="./images/amaz-photo.PNG" alt="Image 2">
-        </li>
-        <li class="slide">
-          <img src="./images/mvp.PNG" alt="Image 3">
-        </li>
-      </ul>
-    </div>
+          <div class="row scroll-bar">
 
-    <div class="texts">
-
-      <div class="app-text" id="1">
-        <a href="https://www.welp.peterhwu.com" target="_blank">
-          <h3 class="app-name">Welp</h3>
-        </a>
-        <h4>github: <a href="https://github.com/phwu123/welp-voldemort-sidebar">service</a> <a href="https://github.com/phwu123/welp-voldemort-proxy">proxy</a></h4>
-        <div class="app-desc">
-          This is a functional application displaying restaurant information heavily based off of Yelp's restaurant
-          page. Includes gateway proxy server to service. Refresh the page to see the information of a random
-          restaurant
+            <div class="col-sm-1"></div>
+            <div class="col scroll-pad-left img-scroll">
+              <img class="selection default-selected scroller img-responsive" src="./images/welp-sidebar.PNG">
+            </div>
+            <div class="col scroll-pad-mid img-scroll">
+              <img class="selection scroller img-responsive" src="./images/amaz-photo.PNG">
+            </div>
+            <div class="col scroll-pad-right img-scroll">
+              <img class="selection scroller img-responsive" src="./images/mvp.PNG">
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
         </div>
-        <div class="tech-stack">
-          Javascript, React, CSS Modules, Node.js/Express, PostgreSQL
-        </div>
+
       </div>
 
-      <div class="app-text invisible" id="2">
-        <a href="https://www.photo.peterhwu.com" target="_blank">
-          <h3 class="app-name">Cat Gallery</h3>
-        </a>
-        <h4>github (ssr branch): <a href="https://github.com/phwu123/amaz-photo-mod">service</a> <a href="https://github.com/phwu123/amaz-photo-proxy">proxy</a></h4>
-        <div class="app-desc">
-          This is a photo gallery, with functionality based off of Amazon's photo galleries for each product. Refresh
-          the page to see a random set of images. Setup includes gateway proxy server to nginx for horizontal load
-          balancing of two identical photo gallery services. Implements server side rendering. Data are url that link
-          to unsplash, placekitten, and loremflickr (images may have slow load times)
-        </div>
-        <div class="tech-stack">
-          Javascript, React, Node.js/Express, MongoDB, Nginx
-        </div>
-      </div>
-
-      <div class="app-text invisible" id="3">
-        <a href="https://www.anime.peterhwu.com" target="_blank">
-          <h3 class="app-name">Anime Gallery List</h3>
-        </a>
-        <h4>github: <a href="https://github.com/phwu123/hrla22-mvp">service</a></h4>
-        <div class="app-desc">
-          This application searches with Kitsu API and displays images based on search queries.
-        </div>
-        <div class="tech-stack">
-          Javascript, React, Node.js/Express, MongoDB, Mongoose
-        </div>
-      </div>
 
     </div>
-
   </div>
 
   </div>
-  </div>
+  <br><br><br><br>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
   <script src="js.js"></script>
 </body>
 
