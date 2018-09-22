@@ -6,8 +6,8 @@ body {
 -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora.jpg', sizingMethod='scale')";
 }
 
-a {
-  color: #78d9f2;
+.header {
+  display: inline;
 }
 
 .fa-arrow-right {
@@ -117,6 +117,15 @@ img {
   right: 0;
   text-align: center;
   animation: bouncing 0.8s infinite;
+}
+
+.hide {
+  display: none;
+}
+
+.placeholder {
+  height: 2px;
+  width: 3px
 }
 
 @keyframes bouncing {
