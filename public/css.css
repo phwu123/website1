@@ -6,10 +6,6 @@ body {
 -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/aurora.jpg', sizingMethod='scale')";
 }
 
-.header {
-  display: inline;
-}
-
 .fa-arrow-right {
   position: absolute;
   top: 50%;
